@@ -4,7 +4,7 @@
  */
 
 // Configuration
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://emotion-predicter.onrender.com";
 
 // Emotion Emojis Mirroring Backend Dictionary
 const EMOTION_EMOJIS = {
