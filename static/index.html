@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SentientAI — BiGRU Emotion Intelligence Platform</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" stroke="url(#brand-grad)" stroke-width="2" stroke-dasharray="3 3"/>
+          <path d="M10 16C10 12.6863 12.6863 10 16 10C19.3137 10 22 12.6863 22 16C22 19.3137 19.3137 22 16 22" stroke="url(#brand-grad)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="3" fill="#6366f1"/>
+          <defs>
+            <linearGradient id="brand-grad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#818cf8"/>
+              <stop offset="1" stop-color="#c084fc"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="brand-text">Sentient<span class="brand-highlight">AI</span></span>
+        <span class="badge-tech">BiGRU v1.0</span>
+      </div>
+
+      <div class="server-status-pill" id="server-status">
+        <span class="status-indicator" id="status-indicator"></span>
+        <span class="status-label" id="status-label">Checking Model...</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="inline-badge">Deep Sequence Learning Inference Engine</div>
+          <h1 class="hero-title">
+            Decode nuanced human emotion with <span class="gradient-text">BiGRU precision</span>.
+          </h1>
+          <p class="hero-subtitle">
+            Bidirectional Gated Recurrent Unit neural architecture mapping text semantics into fine-grained emotional distributions in real time.
+          </p>
+          <div class="hero-actions">
+            <a href="#analyzer-interface" class="btn btn-primary">Start Analysis</a>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-value">6</span>
+                <span class="stat-label">Core Dimensions</span>
+              </div>
+              <div class="stat-separator" aria-hidden="true"></div>
+              <div class="stat-item">
+                <span class="stat-value">50</span>
+                <span class="stat-label">Max Seq Length</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="neural-card-preview">
+            <div class="neural-header">
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+              <span class="code-dot"></span>
+              <span class="neural-title">bidirectional_gru_layer.keras</span>
+            </div>
+            <div class="neural-nodes">
+              <div class="node-layer">
+                <div class="node active"></div>
+                <div class="node active"></div>
+                <div class="node active"></div>
+              </div>
+              <div class="connection-lines">
+                <svg width="100%" height="90" viewBox="0 0 160 90" fill="none">
+                  <path d="M 0 15 C 80 15, 80 45, 160 45" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5"/>
+                  <path d="M 0 45 C 80 45, 80 45, 160 45" stroke="rgba(192, 132, 252, 0.6)" stroke-width="1.5"/>
+                  <path d="M 0 75 C 80 75, 80 45, 160 45" stroke="rgba(129, 140, 248, 0.4)" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="node-layer">
+                <div class="node active central"></div>
+              </div>
+              <div class="connection-lines">
+                <svg width="100%" height="90" viewBox="0 0 160 90" fill="none">
+                  <path d="M 0 45 C 80 45, 80 10, 160 10" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1.2"/>
+                  <path d="M 0 45 C 80 45, 80 25, 160 25" stroke="rgba(52, 211, 153, 0.7)" stroke-width="1.8"/>
+                  <path d="M 0 45 C 80 45, 80 40, 160 40" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1.2"/>
+                  <path d="M 0 45 C 80 45, 80 55, 160 55" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1.2"/>
+                  <path d="M 0 45 C 80 45, 80 70, 160 70" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1.2"/>
+                  <path d="M 0 45 C 80 45, 80 85, 160 85" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1.2"/>
+                </svg>
+              </div>
+              <div class="node-layer multi">
+                <div class="node mini" title="sadness"></div>
+                <div class="node mini highlight" title="joy"></div>
+                <div class="node mini" title="love"></div>
+                <div class="node mini" title="anger"></div>
+                <div class="node mini" title="fear"></div>
+                <div class="node mini" title="surprise"></div>
+              </div>
+            </div>
+            <div class="neural-footer">
+              <span class="token-tag">Tokenized</span>
+              <span class="token-arrow">→</span>
+              <span class="token-tag">Padded (50)</span>
+              <span class="token-arrow">→</span>
+              <span class="token-tag resolved">Softmax [6]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Prediction Interface -->
+    <section class="interface-section" id="analyzer-interface">
+      <div class="container interface-container">
+        <div class="glass-card analyzer-card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Emotion Inference Workbench</h2>
+              <p class="card-subtitle">Supply natural text for classification and full logit distributions.</p>
+            </div>
+            <div class="sample-pills" aria-label="Sample Prompts">
+              <span class="sample-title">Quick tests:</span>
+              <button type="button" class="pill-btn" data-sample="I feel so happy and excited">Joy</button>
+              <button type="button" class="pill-btn" data-sample="I cant stop crying and feeling isolated today">Sadness</button>
+              <button type="button" class="pill-btn" data-sample="I am completely furious about how this turned out">Anger</button>
+              <button type="button" class="pill-btn" data-sample="My heart skips a beat when I see you smile">Love</button>
+            </div>
+          </div>
+
+          <form id="prediction-form" novalidate>
+            <div class="input-group">
+              <div class="textarea-label-row">
+                <label for="text-input" class="field-label">Sentence to Analyze <span class="required-indicator">*</span></label>
+                <div class="char-counter">
+                  <span id="char-count">0</span> / 2000
+                </div>
+              </div>
+              <div class="textarea-wrapper">
+                <textarea
+                  id="text-input"
+                  name="text"
+                  rows="4"
+                  required
+                  minlength="1"
+                  maxlength="2000"
+                  placeholder="Enter a complete sentence here (e.g., 'I feel so happy and excited')..."
+                  aria-describedby="input-error"
+                ></textarea>
+              </div>
+              <div class="input-error-msg" id="input-error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                <span class="btn-text">Predict Emotion</span>
+                <span class="btn-loader" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="btn btn-secondary" id="clear-btn">Clear</button>
+            </div>
+          </form>
+
+          <!-- Alert / Error Banner -->
+          <div class="alert-banner" id="global-alert" role="alert" style="display: none;">
+            <div class="alert-icon" id="alert-icon">⚠️</div>
+            <div class="alert-body">
+              <strong id="alert-heading">Notice</strong>
+              <p id="alert-message">Something went wrong.</p>
+            </div>
+            <button type="button" class="alert-dismiss" id="alert-dismiss" aria-label="Dismiss message">✕</button>
+          </div>
+
+          <!-- Loading Placeholder -->
+          <div class="loading-state" id="loading-state" style="display: none;">
+            <div class="pulse-spinner"></div>
+            <p class="loading-text">Processing tokens through BiGRU network...</p>
+            <p class="loading-subtext">Executing preprocessing, sequence truncation, and inference pass.</p>
+          </div>
+
+          <!-- Dynamic Result Dashboard -->
+          <div class="result-dashboard" id="result-dashboard" style="display: none;">
+            <div class="result-divider">
+              <span>Analysis Results</span>
+            </div>
+
+            <div class="result-summary-card">
+              <div class="summary-left">
+                <span class="summary-caption">Classified Emotion</span>
+                <div class="emotion-display">
+                  <span class="emotion-emoji" id="result-emoji">😐</span>
+                  <div class="emotion-meta">
+                    <h3 class="emotion-name" id="result-emotion">---</h3>
+                    <span class="emotion-sub">Primary Category</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="summary-right">
+                <span class="summary-caption">Confidence Score</span>
+                <div class="confidence-value" id="result-confidence">0.0%</div>
+                <div class="confidence-bar-bg">
+                  <div class="confidence-bar-fill" id="result-confidence-bar" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Full Probabilities Breakdown Grid -->
+            <div class="probabilities-section">
+              <h4 class="section-subheading">Class Distribution Breakdown</h4>
+              <div class="probabilities-grid" id="probabilities-grid">
+                <!-- Dynamically populated via script.js -->
+              </div>
+            </div>
+
+            <!-- Analyzed Raw Text Echo -->
+            <div class="analyzed-text-echo">
+              <span class="echo-label">Evaluated Text:</span>
+              <p class="echo-content" id="result-original-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p class="footer-copy">SentientAI Deep Learning Service — BiGRU Architecture</p>
+      <p class="footer-meta">FastAPI &middot; Keras &middot; Sequence Classification</p>
+    </div>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
