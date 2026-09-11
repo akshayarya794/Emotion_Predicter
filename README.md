@@ -21,7 +21,10 @@ Emotion_Predicter/
 ├── runtime.txt          # Python runtime specification for Render deployment
 └── .gitignore           # Ignored files and directories
 
-## 🛠️ Tech Stack
+```
+
+## Tech Stack
+
 Backend: Python (12%), FastAPI
 
 Machine Learning: BiGRU (Model Artifacts)
